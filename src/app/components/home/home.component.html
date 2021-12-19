@@ -1,0 +1,1140 @@
+<div class="container homeWrapper">
+  <mat-horizontal-stepper [linear]="false" #stepper>
+    <mat-step label="Step 1">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[0].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[0].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[0].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[0].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[0].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[0].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[0].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[0].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[0].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </mat-step>
+    <mat-step label="Step 2">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <<span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[1].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[1].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[1].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[1].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[1].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[1].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[1].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[1].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[1].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step label="Step 3">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[2].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[2].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[2].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[2].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[2].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[2].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[2].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[2].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[2].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[3].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[3].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[3].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[3].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[3].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[3].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[3].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[3].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[3].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[4].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[4].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[4].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[4].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[4].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[4].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[4].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[4].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[4].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[5].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[5].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[5].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[5].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[5].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[5].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[5].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[5].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[5].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[6].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[6].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[6].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[6].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[6].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[6].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[6].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[6].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[6].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[7].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[7].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[7].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[7].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[7].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[7].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[7].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[7].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[7].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[8].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[8].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[8].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[8].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[8].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[8].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[8].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[8].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[8].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[9].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[9].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[9].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[9].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[9].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[9].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[9].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[9].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[9].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[10].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[10].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[10].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[10].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[10].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[10].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[10].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[10].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[10].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[11].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[11].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[11].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[11].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[11].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[11].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[11].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[11].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[11].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[12].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[12].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[12].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[12].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[12].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[12].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[12].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[12].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[12].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[13].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[13].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[13].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[13].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[13].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[13].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[13].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[13].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[13].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[14].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[14].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[14].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[14].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[14].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[14].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[14].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[14].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[14].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[15].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[15].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[15].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[15].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[15].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[15].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[15].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[15].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[15].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[16].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[16].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[16].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[16].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[16].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[16].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[16].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[16].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[16].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[17].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[17].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[17].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[17].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[17].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[17].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[17].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[17].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[17].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[18].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[18].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[18].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[18].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[18].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[18].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[18].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[18].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[18].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 4">
+      <div class="stepWrapper">
+        <div class="timerWrapper row p-4">
+          <div class="col-sm-2 float-left">
+            <div class="valueWrapper">
+              <span class="sr-only timerValue" > {{timerValue}}  </span>
+            </div>
+            <div class="spinner-border"  role="status">
+            </div>
+          </div>
+        </div>
+        <div class="questionWrapper ">
+          <div class="questionInner ">
+            <div class="arrow-right"></div>
+            <span >{{allQuestions[19].question}}</span>
+            <div class="arrow-left"></div>
+          </div>
+        </div>
+        <div class="mainWrapper row p-0 m-0 w-100">
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[19].incorrect_answers[1]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">A:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[19].incorrect_answers[0]}}</span>
+                 <div class="arrow-left"></div>
+            </span> </div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[19].incorrect_answers[0]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">B:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span>  {{allQuestions[19].incorrect_answers[1]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+          <div class="row m-0 p-0">
+            <div class="col-sm-6" (click)="ChosenAnswer(true,(allQuestions[19].correct_answer),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">C:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                <span  >{{allQuestions[19].correct_answer}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+            <div class="col-sm-6" (click)="ChosenAnswer(false,(allQuestions[19].incorrect_answers[2]),stepper)">
+              <div class="answerInner"><span class="alphaBetSign">D:</span><span class="questionText">
+                 <div class="arrow-right"></div>
+                  <span>  {{allQuestions[19].incorrect_answers[2]}}</span>
+                 <div class="arrow-left"></div>
+              </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step label="Step 20">
+      <<div class="stepWrapper">
+        <div class="col-sm-8 mx-auto answersWrapper" >
+        <div class="row ">
+          <div class="numOfFiles ">
+            <div class="redWrapper">
+              <h2 class="headerAnswers text-center text-light">All Questions And Answers</h2>
+              <div class="redRound">{{(questions | async)?.length}}</div>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">question</th>
+            <th scope="col">answer</th>
+            <th scope="col">invalid 3 Answers</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let question of questions | async">
+            <td>#</td>
+            <td>{{question.question}}</td>
+            <td>{{question.answer}}</td>
+            <td>{{question.invalidAnswers}}</td>
+          </tr>
+          </tbody>
+        </table>
+          <div class="row">
+            <div class="col-sm-3 mx-auto">
+            <button alt="Next" (click)="goToselectedIndex(1,stepper )" class="mr-1 btn btn-secondary"> Reload Questions</button>
+          </div>
+          </div>
+      </div>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+

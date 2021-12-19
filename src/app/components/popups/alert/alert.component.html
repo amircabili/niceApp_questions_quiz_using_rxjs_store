@@ -1,0 +1,31 @@
+<div class="alertComponent">
+  <div class="modalHeader">
+    <div class="row m-0">
+      <div class="col-sm-1 col-xs-2">
+        <div class="exitButtonWrapper">
+          <button alt="{langService.manager.AppComponent.exit}"  class="exitButton pull-left"
+                  (click)="finishFunction()">
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-11 col-xs-10">
+        <h3 class="tableHeader "></h3>
+      </div>
+    </div>
+  </div>
+  <div class="modalContent">
+    <div class="alertWrapper container-fluid direction-rtl">
+      <div class="innerText row ">
+        <div class=" my-5 p-3 col-sm-12 margin-auto text-center">
+          <span>{{data}}</span>
+        </div>
+      </div>
+      <br>
+      <div class="innerText row   ">
+        <div class=" p-3 col-sm-12 margin-auto text-center">
+          <button alt="Next" (click)="finishFunction()" class="mr-1 btn btn-primary"> Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+.alertComponent{
+  background: #0d0234;
+  /* background: rgb(56,47,122); */
+  background: linear-gradient(
+      83deg, rgb(0 0 0) 0%, rgb(17 13 48) 8%, rgb(24 11 68) 34%, rgba(29,14,83,1) 94%, rgb(27 19 54) 100%);
+
+
+}
+
+
+::ng-deep{
+
+
+  #global-functions-modal-component-alert{
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 0;
+
+    app-alert {
+
+      div.alertComponent{
+        position: relative;
+
+        .modalHeader{
+          min-height: 64px;
+          color: white;
+          background: #1c0e52;
+          padding-right: 30px;
+          width: 100%;
+          margin: 0 auto;
+          float: right;
+          border: solid 1px #7e798d;
+
+          .exitButtonWrapper{
+            text-align: center;
+            margin: 0 auto;
+            float: right;
+            top: 9px;
+            position: relative;
+            /* height: 50px; */
+            padding: 10px 16px 10px 20px;
+            left: 35px;
+            border-right: solid 1px rgba(245, 243, 248, 0.6);
+
+
+            @media (max-width: 768px) {
+              float: left;
+              top: 3px;
+              left: -17px;
+            }
+
+            .exitButton{
+              background: no-repeat center url('../../../../assets/img/close-x-big_white.png');
+              width: 34px;
+              height: 29px;
+              top: -2px;
+              float: left;
+              position: relative;
+              /* left: 9px; */
+              display: block;
+              z-index: 99;
+              border: solid gray 0px !important;
+
+              @media (max-width: 768px) {
+                background: no-repeat center url('../../../../assets/img/close-x-big_white.png');
+                width: 41px;
+                height: 39px;
+              }
+
+              span{
+
+              }
+            }
+          }
+          h3{
+            color:#fff;
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+
+            @media (max-width: 768px) {
+              font-size: 29px;
+            }
+
+          }
+        }
+
+        .modalContent{
+          width: 100%;
+          float: right;
+
+          height: auto;
+          position: relative;
+          max-height: 480px;
+
+
+        }
+      }
+    }
+
+    .alertWrapper{
+      z-index: 1;
+      padding: 0px;
+      background: #4c4c4c;
+      color: white;
+      background: #0d0234;
+      background: linear-gradient(
+          83deg, black 0%, #110d30 8%, #180b44 34%, #1d0e53 94%, #1b1336 100%);
+      border: solid 1px #7e798d;
+
+      .innerText{
+
+        span{
+          font-size:2.2rem;
+        }
+
+        button {
+          border-radius: 11px;
+          background-color: #2e264a;
+          text-align: center;
+          font-size: 14px;
+          font-weight: 400;
+          color: #ffffff;
+          padding: 17px;
+          margin: 1px;
+          font-size: 25px;
+          border: solid 0px gray;
+          font-weight: 100;
+          letter-spacing: normal;
+
+          @media (max-width: 768px) {
+            width: 80%;
+            height: 90px;
+            font-size: 30px;
+            margin-top: 4%;
+          }
+
+        }
+      }
+
+
+    }
+  }
+}
+
+
